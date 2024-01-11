@@ -1,0 +1,28 @@
+
+# Crea un archivo para una bd de posgresql con sus variables por defecto 
+
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15.3
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgresdb:/var/lib/postgresql   
+    ports:
+      - 5432:5432
+volumes:                                # Creamos y asignamos el volumen de docker
+  postgresdb:
+    driver: local
+
+
+
+
+
+
+
+
+
