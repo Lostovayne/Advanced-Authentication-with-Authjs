@@ -2,10 +2,21 @@
  Sistema de Autenticación con Next Auth usando la V5 ( Auth.Js) 
 
 ## Características
-- Manejo del formulario
-- Característica 1
-- Característica 2
-- Característica 3
+- Manejo del formulario usando React Hook Form y Zod
+- Uso de Componentes de UI de Shadcn UI y Radix UI para mejorar la usabilidad
+- Sistema de Autenticación con Next Auth
+- Manejo de la base de datos con Prisma
+- Seguridad basada en JWT
+- Configuración de variables de entorno
+- Vistas de Login y Register con Tailwind CSS
+- Manejo de errores
+- Cierre de sesión
+- Configurado el doble factor de autenticación
+- Configurado el reenvío de correo para validar la cuenta de correo
+- Configurado el metodo de recuperar contraseña
+- Implementado el servicio de Roles de usuario
+- Uso de Server Actions para la autenticación
+
 
 ## Tecnologías Utilizadas
 
@@ -17,6 +28,8 @@
 - React Hook Form
 - Zod
 - Shadcn UI
+- Radix UI
+- bcrypt
 
 ## Requisitos Previos
 
@@ -25,24 +38,21 @@ Asegúrate de tener instalado lo siguiente antes de comenzar:
 - Node.js 20+
 - pnpm
 
+## Levantar el proyecto localmente
+- Instalar los modulos usando `pnpm install`
+- Correr el contenedor de docker `docker compose up -d`
+- Correr el servidor `pnpm dev`
+- Visitar http://localhost:3000
+
+
 ## Configuración
 
 Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 1. Clona este repositorio: `git clone <URL DEL REPOSITORIO>`
 2. Navega al directorio del proyecto: `cd <NOMBRE DEL PROYECTO>`
-3. Instala las dependencias: `npm install` o `yarn install`
+3. Instala las dependencias: `pnpm install`
 4. Configura las variables de entorno en un archivo `.env` siguiendo el archivo `.env.example`.
-
-## Uso
-
-Sigue estos pasos para iniciar el proyecto localmente:
-
-1. Inicia el servidor de desarrollo: `npm run dev` o `yarn dev`
-2. Abre tu navegador y visita `http://localhost:3000`.
-
-## Detalles 
-Se está manejando tanto el Login como el Register usando server actions.
 
 
 
