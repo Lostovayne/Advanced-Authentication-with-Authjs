@@ -9,36 +9,35 @@ import bcrypt from "bcrypt";
 // imoportar instancia de prisma
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
-    const validatedFields = RegisterSchema.safeParse(values);
+	const validatedFields = RegisterSchema.safeParse(values);
 
-    if (!validatedFields.success) {
-        return {
-            error: "Invalid Fields!",
-        };
-    }
+	if (!validatedFields.success) {
+		return {
+			error: "Invalid Fields!"
+		};
+	}
 
-    const { email, password, name } = validatedFields.data;
-    const hashedPassword = await bcrypt.hash(password, 10);
+	const { email, password, name } = validatedFields.data;
+	const hashedPassword = await bcrypt.hash(password, 10);
+	const existingUser = await getUserByEmail(email);
 
-    const existingUser = await getUserByEmail(email);
+	if (existingUser) {
+		return {
+			error: "Email already exists!"
+		};
+	}
 
-    if (existingUser) {
-        return {
-            error: "Email already exists!",
-        };
-    }
+	const user = await db.user.create({
+		data: {
+			email,
+			name,
+			password: hashedPassword
+		}
+	});
 
-    const user = await db.user.create({
-        data: {
-            email,
-            name,
-            password: hashedPassword,
-        },
-    });
-
-    //TODO: Verificar el toquen del email
-
-    return {
-        success: "User Created!",
-    };
+	console.log(user);
+	//TODO: Verificar el toquen del email
+	return {
+		success: "User Created!"
+	};
 };

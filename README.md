@@ -1,71 +1,163 @@
-# Auth.Js
- Sistema de Autenticación con Next Auth usando la V5 ( Auth.Js) 
+# Authentication System with Next.js 15 and Auth.js (NextAuth V5)
 
-## Características
-- Manejo del formulario usando React Hook Form y Zod
-- Uso de Componentes de UI de Shadcn UI y Radix UI para mejorar la usabilidad
-- Sistema de Autenticación con Next Auth
-- Manejo de la base de datos con Prisma
-- Seguridad basada en JWT
-- Configuración de variables de entorno
-- Vistas de Login y Register con Tailwind CSS
-- Manejo de errores
-- Cierre de sesión
-- Configurado el doble factor de autenticación
-- Configurado el reenvío de correo para validar la cuenta de correo
-- Configurado el metodo de recuperar contraseña
-- Implementado el servicio de Roles de usuario
-- Uso de Server Actions para la autenticación
+This project implements an authentication system using **Next.js 15**, **Auth.js (NextAuth V5)**, and other modern technologies such as **Prisma 6**, **Cloudflare Workers**, and **Shadcn UI**. The authentication system is designed to be secure, scalable, and easy to integrate into any Next.js project.
 
+## Key Features
 
-## Tecnologías Utilizadas
+This authentication system includes the following features:
 
-- Next.js 14
-- Tailwind CSS
-- TypeScript
-- Next Auth
-- Prisma
-- React Hook Form
-- Zod
-- Shadcn UI
-- Radix UI
-- bcrypt
+- **Authentication Form:**
+  - Uses **React Hook Form** for efficient form management.
+  - **Zod** is used for data validation in the forms.
+- **User Interface (UI):**
+  - Reusable components built with **Shadcn UI** and **Radix UI** for a modern, accessible user experience.
+- **Authentication and Security:**
 
-## Requisitos Previos
+  - Implemented with **Next Auth (Auth.js V5)** using **JWT** (JSON Web Tokens) for secure session management.
+  - **Two-Factor Authentication (2FA)** for enhanced security.
+  - **Password recovery** and **email verification** features.
 
-Asegúrate de tener instalado lo siguiente antes de comenzar:
+- **Database:**
+  - Managed with **Prisma 6** and supports **PostgreSQL 17.3**.
+- **User Roles:**
 
-- Node.js 20+
-- pnpm
+  - A role-based user system that allows managing user access and privileges.
 
-## Levantar el proyecto localmente
-- Instalar los modulos usando `pnpm install`
-- Correr el contenedor de docker `docker compose up -d`
-- Correr el servidor `pnpm dev`
-- Visitar http://localhost:3000
+- **Docker Development:**
 
+  - The project is set up to run in Docker containers, making it easy to deploy and scale.
 
-## Configuración
+- **Other Features:**
+  - **bcrypt** is used for securely encrypting passwords.
+  - **Environment variables** are used to securely manage API keys, database credentials, and other sensitive data.
 
-Sigue estos pasos para configurar el proyecto en tu máquina local:
+## Technologies Used
 
-1. Clona este repositorio: `git clone <URL DEL REPOSITORIO>`
-2. Navega al directorio del proyecto: `cd <NOMBRE DEL PROYECTO>`
-3. Instala las dependencias: `pnpm install`
-4. Configura las variables de entorno en un archivo `.env` siguiendo el archivo `.env.example`.
+The project is built with the following technologies:
 
+| Technology              | Description                                             |
+| ----------------------- | ------------------------------------------------------- |
+| **Next.js 15**          | React framework for modern web applications.            |
+| **Tailwind CSS**        | Utility-first CSS framework for rapid design.           |
+| **TypeScript**          | A statically typed superset of JavaScript.              |
+| **Next Auth (Auth.js)** | Authentication system with JWT and OAuth support.       |
+| **Prisma 6**            | ORM for databases that simplifies queries.              |
+| **React Hook Form**     | Library for managing forms in React.                    |
+| **Zod**                 | Library for data validation.                            |
+| **Shadcn UI**           | Reusable UI components for building modern interfaces.  |
+| **Radix UI**            | A library of accessible, unstyled UI components.        |
+| **bcrypt**              | Library for securely hashing passwords.                 |
+| **PostgreSQL 17.3**     | Relational database used in the project.                |
+| **Docker**              | Platform for containerizing and deploying applications. |
 
+## Prerequisites
 
-## Contribución
+Before getting started, make sure you have the following installed:
 
-Si deseas contribuir a este proyecto, sigue los siguientes pasos:
+- **Node.js** 20+ (Download from [here](https://nodejs.org/))
+- **bun** (A fast JavaScript bundler, download from [here](https://bun.sh/))
 
-1. Crea un fork del repositorio.
-2. Crea una rama para tu nueva funcionalidad: `git checkout -b nueva-funcionalidad`
-3. Realiza tus cambios y haz commit: `git commit -m 'Agrega una nueva funcionalidad'`
-4. Haz push a tu rama: `git push origin nueva-funcionalidad`
-5. Abre una Pull Request en este repositorio.
+## Running the Project Locally
 
-## Licencia
+Follow these steps to run the project locally:
 
-Este proyecto está bajo la licencia MIT. Puedes leer el archivo de licencia [aquí](LICENSE).
+1. **Clone the repository**:
+   ```bash
+   git clone <REPOSITORY_URL>
+   ```
+
+# Project Setup Instructions
+
+## Navigate to the Project Directory
+
+```bash
+cd <PROJECT_NAME>
+```
+
+## Install Dependencies
+
+We use **bun** to install project dependencies:
+
+```bash
+bun install
+```
+
+## Start the Docker Container
+
+If you're using Docker for the database and services:
+
+```bash
+docker compose up -d
+```
+
+## Start the Development Server
+
+```bash
+bun dev
+```
+
+## Access the Project
+
+Open your browser and visit [http://localhost:3000](http://localhost:3000).
+
+## Configuration
+
+Follow these steps to set up the project on your local machine:
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone <REPOSITORY_URL>
+   ```
+
+2. **Navigate to the Project Directory**:
+
+   ```bash
+   cd <PROJECT_NAME>
+   ```
+
+3. **Install Dependencies**:
+
+   ```bash
+   bun install
+   ```
+
+4. **Configure Environment Variables**:
+
+   Copy the `.env.example` file to `.env` and update the configuration to match your environment:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Make sure to properly configure the credentials for PostgreSQL, NextAuth, and any other external APIs or services you're using.
+
+## Contributing
+
+If you'd like to contribute to this project, follow these steps:
+
+1. **Fork the Repository on GitHub**.
+
+2. **Create a Branch for Your New Feature**:
+
+   ```bash
+   git checkout -b new-feature
+   ```
+
+3. **Make Your Changes and Commit**:
+
+   ```bash
+   git commit -m 'Add new feature'
+   ```
+
+4. **Push Your Branch to the Remote Repository**:
+
+   ```bash
+   git push origin new-feature
+   ```
+
+5. **Open a Pull Request in this repository and describe the changes you made**.
+
+## License
+
+This project is licensed under the MIT License. You can read the license file [here](LICENSE).
